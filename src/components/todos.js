@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 
@@ -8,6 +8,13 @@ import List from '@material-ui/core/List'
 
 export const useTodos = (initialState = []) => {
   const [todos, setTodos] = useState(initialState)
+
+  useEffect(
+    () => {
+      localStorage.setItem('todos', JSON.stringify(todos))
+    },
+    [todos]
+  )
 
   const addTodo = todoText => {
     const newTodos = [

@@ -7,24 +7,6 @@ import TodoForm from 'components/todo-form'
 
 import Paper from '@material-ui/core/Paper'
 
-const initialState = [
-  {
-    id: 'very-uniq-id-1',
-    text: 'Learn React hooks',
-    checked: true
-  },
-  {
-    id: 'very-uniq-id-2',
-    text: 'Write simple todo app with React hooks',
-    checked: true
-  },
-  {
-    id: 'very-uniq-id-3',
-    text: 'Write app with redux + React hooks',
-    checked: false
-  }
-]
-
 const styles = () => ({
   root: {
     width: '100%',
@@ -37,7 +19,8 @@ const styles = () => ({
 })
 
 const App = ({ classes }) => {
-  const [todos, actions] = useTodos(initialState)
+  const initialState = localStorage.getItem('todos')
+  const [todos, actions] = useTodos(JSON.parse(initialState) || [])
   const [value, setValue] = useState('')
 
   const handleChange = e => {
@@ -45,6 +28,7 @@ const App = ({ classes }) => {
   }
 
   const handleSubmit = () => {
+    if (!value.length) return
     actions.addTodo(value)
     setValue('')
   }
