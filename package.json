@@ -1,0 +1,58 @@
+{
+  "name": "react-weather-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Zelofff/react-weather-app.git",
+  "author": "zeloff <zelofflab@yandex.ru>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --config ./webpack.config.js --open --hot --history-api-fallback",
+    "build": "webpack --mode production"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint"
+    ],
+    "*.{js,jsx,json,md}": [
+      "prettier --list-different"
+    ]
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-symbiote": "^3.0.2",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.11.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
