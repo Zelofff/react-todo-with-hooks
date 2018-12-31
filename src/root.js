@@ -1,10 +1,14 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+
+import store from 'store'
+
 import App from 'components/app'
 
 const Root = () => (
-  <React.Fragment>
+  <Provider store={store}>
     <App />
-  </React.Fragment>
+  </Provider>
 )
 
 export default Root
