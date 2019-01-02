@@ -33,6 +33,12 @@ const App = ({ classes }) => {
     setValue('')
   }
 
+  const handleKeyDown = e => {
+    if (e.keyCode === 13) {
+      handleSubmit()
+    }
+  }
+
   return (
     <Paper className={classes.root}>
       <Todos
@@ -48,6 +54,7 @@ const App = ({ classes }) => {
         className={classes.todoInput}
         onChange={handleChange}
         onSubmit={handleSubmit}
+        onKeyDown={handleKeyDown}
       />
     </Paper>
   )

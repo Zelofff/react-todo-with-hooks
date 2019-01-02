@@ -40,9 +40,23 @@ const Todo = ({ todo, index, removeTodo, toggleTodo, editTodo, classes }) => {
     setValue(text)
   }
 
+  const handleKeyDown = e => {
+    if (e.keyCode === 13) {
+      handleSubmit()
+    }
+
+    if (e.keyCode === 27) {
+      handleCancel()
+    }
+  }
+
   return !editing ? (
     <ListItem divider>
-      <Checkbox onClick={toggleTodo(id)} checked={checked} tabIndex={index} />
+      <Checkbox
+        onClick={toggleTodo(id)}
+        checked={checked}
+        tabIndex={index + 1}
+      />
       <ListItemText
         className={checked ? classes.checkedTodo : ''}
         primary={text}
@@ -59,9 +73,10 @@ const Todo = ({ todo, index, removeTodo, toggleTodo, editTodo, classes }) => {
       onSubmit={handleSubmit}
       onChange={handleChange}
       onCancel={handleCancel}
+      onKeyDown={handleKeyDown}
       value={value}
       label="Edit Todo"
-      withCancel
+      editing
     />
   )
 }
