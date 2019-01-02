@@ -76,9 +76,9 @@ export const useTodos = (initialState = []) => {
   ]
 }
 
-const Todos = ({ todos, removeTodo, toggleTodo, editTodo, ...other }) => {
-  const renderList = () =>
-    todos.map((todo, index) => (
+const Todos = ({ todos, removeTodo, toggleTodo, editTodo, ...other }) => (
+  <List {...other}>
+    {todos.map((todo, index) => (
       <Todo
         key={todo.id}
         todo={todo}
@@ -87,16 +87,15 @@ const Todos = ({ todos, removeTodo, toggleTodo, editTodo, ...other }) => {
         toggleTodo={toggleTodo}
         editTodo={editTodo}
       />
-    ))
-
-  return <List {...other}>{renderList()}</List>
-}
+    ))}
+  </List>
+)
 
 Todos.propTypes = {
-  todos: PropTypes.array,
-  toggleTodo: PropTypes.func,
-  removeTodo: PropTypes.func,
-  editTodo: PropTypes.func
+  todos: PropTypes.array.isRequired,
+  toggleTodo: PropTypes.func.isRequired,
+  removeTodo: PropTypes.func.isRequired,
+  editTodo: PropTypes.func.isRequired
 }
 
 export default Todos

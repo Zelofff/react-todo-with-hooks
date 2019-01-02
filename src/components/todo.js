@@ -82,12 +82,12 @@ const Todo = ({ todo, index, removeTodo, toggleTodo, editTodo, classes }) => {
 }
 
 Todo.propTypes = {
-  todo: PropTypes.object,
-  index: PropTypes.number,
-  removeTodo: PropTypes.func,
-  toggleTodo: PropTypes.func,
-  editTodo: PropTypes.func,
-  classes: PropTypes.object
+  todo: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  removeTodo: PropTypes.func.isRequired,
+  toggleTodo: PropTypes.func.isRequired,
+  editTodo: PropTypes.func.isRequired,
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Todo)

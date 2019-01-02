@@ -61,7 +61,7 @@ const App = ({ classes }) => {
 }
 
 App.propTypes = {
-  classes: PropTypes.object
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(App)
