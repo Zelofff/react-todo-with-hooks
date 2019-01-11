@@ -21,9 +21,7 @@ module.exports = {
   resolve: {
     alias: {
       components: path.resolve(__dirname, 'src/components'),
-      store: path.resolve(__dirname, 'src/store'),
-      client: path.resolve(__dirname, 'src/client.js'),
-      helpers: path.resolve(__dirname, 'src/helpers.js')
+      hooks: path.resolve(__dirname, 'src/hooks')
     }
   },
   plugins: [htmlPlugin]

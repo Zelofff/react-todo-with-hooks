@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import { useTodos, useInput } from 'hooks'
 import PropTypes from 'prop-types'
 
-import Todos, { useTodos } from 'components/todos'
+import Todos from 'components/todos'
 import TodoForm from 'components/todo-form'
 
 import Paper from '@material-ui/core/Paper'
@@ -21,11 +22,7 @@ const styles = () => ({
 const App = ({ classes }) => {
   const initialState = localStorage.getItem('todos')
   const [todos, actions] = useTodos(JSON.parse(initialState) || [])
-  const [value, setValue] = useState('')
-
-  const handleChange = e => {
-    setValue(e.target.value)
-  }
+  const [value, handleChange, setValue] = useInput('')
 
   const handleSubmit = () => {
     if (!value.length) return

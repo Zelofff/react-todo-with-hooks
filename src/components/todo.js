@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import { useInput } from 'hooks'
 import PropTypes from 'prop-types'
 
 import TodoForm from 'components/todo-form'
@@ -20,11 +21,7 @@ const styles = () => ({
 const Todo = ({ todo, index, removeTodo, toggleTodo, editTodo, classes }) => {
   const { id, text, checked } = todo
   const [editing, setEditing] = useState(false)
-  const [value, setValue] = useState(text)
-
-  const handleChange = e => {
-    setValue(e.target.value)
-  }
+  const [value, handleChange, setValue] = useInput(text)
 
   const handleSubmit = () => {
     editTodo(id, value)
@@ -50,10 +47,18 @@ const Todo = ({ todo, index, removeTodo, toggleTodo, editTodo, classes }) => {
     }
   }
 
+  const handleRemoveTodo = () => {
+    removeTodo(id)
+  }
+
+  const handleToggleTodo = () => {
+    toggleTodo(id)
+  }
+
   return !editing ? (
     <ListItem divider>
       <Checkbox
-        onClick={toggleTodo(id)}
+        onClick={handleToggleTodo}
         checked={checked}
         tabIndex={index + 1}
       />
@@ -63,7 +68,7 @@ const Todo = ({ todo, index, removeTodo, toggleTodo, editTodo, classes }) => {
         onClick={handleEdit}
       />
       <ListItemSecondaryAction>
-        <IconButton onClick={removeTodo(id)} aria-label="Remove todo">
+        <IconButton onClick={handleRemoveTodo} aria-label="Remove todo">
           <DeleteIcon />
         </IconButton>
       </ListItemSecondaryAction>
