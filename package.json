@@ -6,8 +6,8 @@
   "author": "zeloff <zelofflab@yandex.ru>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development --config ./webpack.config.js --open --hot --history-api-fallback",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --config ./webpack.dev.js --open --hot --history-api-fallback",
+    "build": "webpack --config ./webpack.prod.js"
   },
   "husky": {
     "hooks": {
@@ -38,6 +38,8 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^1.0.0",
+    "compression-webpack-plugin": "^2.0.0",
     "eslint": "^5.11.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
@@ -52,6 +54,7 @@
     "prettier": "^1.15.3",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1"
   }
 }
