@@ -1,8 +1,8 @@
 import { styled } from 'linaria/react'
 
 export const EmojiButton = styled.button`
-  background-color: transparent;
   border: none;
+  border-radius: 50%;
   cursor: pointer;
   font-size: 2rem;
   line-height: 2rem;
@@ -14,6 +14,5 @@ export const EmojiButton = styled.button`
 
   :focus {
     border: 1px solid black;
-    border-radius: 50%;
   }
 `
