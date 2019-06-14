@@ -1,7 +1,11 @@
 import React from 'react'
 
-import { CommonContentTemplate } from '@features/common'
+import { CommonTodosTemplate } from '../templates/common'
 
 export const TodosPage = () => {
-  return <CommonContentTemplate>hello world</CommonContentTemplate>
+  return (
+    <CommonTodosTemplate>
+      <p>hello world</p>
+    </CommonTodosTemplate>
+  )
 }
