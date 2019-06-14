@@ -17,7 +17,7 @@ CommonContentTemplate.propTypes = {
 }
 
 CommonContentTemplate.defaultProps = {
-  header: Header
+  header: <Header />
 }
 
 const CommonContent = styled.div`
