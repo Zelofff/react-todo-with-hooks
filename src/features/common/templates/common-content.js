@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
-import { MainTemplate } from '@ui/templates'
+import { MainTemplate } from '@ui'
 import { Header } from '../organisms'
 
 export const CommonContentTemplate = ({ header, children }) => (
@@ -20,7 +20,7 @@ CommonContentTemplate.defaultProps = {
   header: <Header />
 }
 
-const CommonContent = styled.div`
+const CommonContent = styled.main`
   display: flex;
   justify-content: center;
 `
