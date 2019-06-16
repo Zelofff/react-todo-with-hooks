@@ -3,35 +3,40 @@ import PropTypes from 'prop-types'
 import { useInput } from '@lib/use-input'
 import { styled } from 'linaria/react'
 
-export const TodoItem = ({ todo, onSave, onRemove }) => {
+export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
   const [editing, setEditing] = React.useState(false)
   const [newText, setNewText, reset] = useInput(todo.text)
 
-  const handleEdit = () => {
-    setEditing(true)
+  const toggleEdit = () => {
+    setEditing(e => !e)
   }
 
   const handleSave = () => {
     onSave(newText)
-    setEditing(false)
+    toggleEdit()
   }
 
   const handleCancel = () => {
-    setEditing(false)
+    toggleEdit()
     reset()
   }
 
   return (
     <TodoBox>
-      <Checkbox checked={todo.checked} />
+      <Checkbox
+        checked={todo.completed}
+        onToggle={onToggle}
+        labelledBy={todo.id}
+      />
       <TodoCenterContent
+        idForA11y={todo.id}
         text={newText}
         editing={editing}
         onChange={setNewText}
       />
       <TodoButtons
         editing={editing}
-        onEdit={handleEdit}
+        onEdit={toggleEdit}
         onRemove={onRemove}
         onSave={handleSave}
         onCancel={handleCancel}
@@ -46,19 +51,22 @@ TodoItem.propTypes = {
     completed: PropTypes.bool.isRequired,
     id: PropTypes.string.isRequired
   }),
+  onToggle: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired
 }
 
-const TodoCenterContent = ({ text, editing, onChange }) => {
+const TodoCenterContent = ({ idForA11y, text, editing, onChange }) => {
   return editing ? (
-    <Input value={text} onChange={onChange} />
+    // eslint-disable-next-line
+    <Input autoFocus value={text} onChange={onChange} />
   ) : (
-    <Text>{text}</Text>
+    <Text id={idForA11y}>{text}</Text>
   )
 }
 
 TodoCenterContent.propTypes = {
+  idForA11y: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   editing: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired
@@ -88,9 +96,41 @@ TodoButtons.propTypes = {
   onCancel: PropTypes.func.isRequired
 }
 
+const Checkbox = ({ onToggle, checked, labelledBy }) => {
+  const handleKeyDown = e => {
+    if (e.keyCode === 32) {
+      onToggle()
+    }
+  }
+
+  return (
+    <Box
+      role="checkbox"
+      tabIndex="0"
+      aria-checked={checked}
+      aria-labelledby={labelledBy}
+      onClick={onToggle}
+      onKeyDown={handleKeyDown}
+    >
+      {checked ? 'X' : ' '}
+    </Box>
+  )
+}
+
+Checkbox.propTypes = {
+  onToggle: PropTypes.func.isRequired,
+  checked: PropTypes.bool.isRequired,
+  labelledBy: PropTypes.string.isRequired
+}
+
 const TodoBox = styled.li``
-const Checkbox = styled.div``
 const Input = styled.input``
 const Text = styled.p``
 const Buttons = styled.div``
 const Button = styled.button``
+const Box = styled.div`
+  border: 1px solid #000;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+`

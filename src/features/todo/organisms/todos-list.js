@@ -16,7 +16,13 @@ export const TodosList = () => {
     <ItemsList
       items={items}
       render={item => (
-        <TodoItem key={item.id} todo={item} onSave={noop} onRemove={noop} />
+        <TodoItem
+          key={item.id}
+          todo={item}
+          onToggle={() => noop(item.id)}
+          onSave={newText => noop(item.id, newText)}
+          onRemove={() => noop(item.id)}
+        />
       )}
     />
   )
