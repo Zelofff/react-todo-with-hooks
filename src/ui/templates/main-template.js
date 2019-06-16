@@ -26,6 +26,7 @@ const MainContainer = styled.div`
   display: grid;
   max-height: 100vh;
   max-width: 100vw;
+  height: 100vh;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     'header'

@@ -23,4 +23,5 @@ CommonContentTemplate.defaultProps = {
 const CommonContent = styled.main`
   display: flex;
   justify-content: center;
+  overflow-y: auto;
 `

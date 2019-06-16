@@ -19,4 +19,5 @@ const Center = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 60vw;
+  width: 100%;
 `
