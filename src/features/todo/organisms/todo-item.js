@@ -107,13 +107,12 @@ const Checkbox = ({ onToggle, checked, labelledBy }) => {
     <Box
       role="checkbox"
       tabIndex="0"
+      checked={checked}
       aria-checked={checked}
       aria-labelledby={labelledBy}
       onClick={onToggle}
       onKeyDown={handleKeyDown}
-    >
-      {checked ? 'X' : ' '}
-    </Box>
+    />
   )
 }
 
@@ -129,8 +128,12 @@ const Text = styled.p``
 const Buttons = styled.div``
 const Button = styled.button``
 const Box = styled.div`
+  position: relative;
   border: 1px solid #000;
   width: 15px;
   height: 15px;
   cursor: pointer;
+  ::after {
+    content: ${props => (props.checked ? '"✔"' : ' ')};
+  }
 `
