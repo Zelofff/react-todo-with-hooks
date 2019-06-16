@@ -5,6 +5,7 @@ export const globals = css`
     body {
       margin: 0;
       padding: 0;
+      height: 100vh;
       font-size: 1.4rem;
       font-family: 'Helvetica', sans-serif;
       overflow: hidden;
