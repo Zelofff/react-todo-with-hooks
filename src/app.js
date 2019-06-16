@@ -8,7 +8,7 @@ import { ThemeProvider } from '@lib/theme-context'
 const AppContainer = () => {
   return (
     <ThemeProvider>
-      <TodosPage className={global} />
+      <TodosPage />
     </ThemeProvider>
   )
 }
