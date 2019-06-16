@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useInput } from '@lib/use-input'
-import { styled } from 'linaria/react'
+
+import { Text, EmojiButton } from '@ui'
+import { TodoBox, TodoInput, Checkbox, ButtonsBox } from '../atoms'
 
 export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
   const [editing, setEditing] = React.useState(false)
@@ -23,11 +25,13 @@ export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
 
   return (
     <TodoBox>
-      <Checkbox
-        checked={todo.completed}
-        onToggle={onToggle}
-        labelledBy={todo.id}
-      />
+      {!editing && (
+        <Checkbox
+          checked={todo.completed}
+          onToggle={onToggle}
+          labelledBy={todo.id}
+        />
+      )}
       <TodoCenterContent
         idForA11y={todo.id}
         text={newText}
@@ -58,8 +62,13 @@ TodoItem.propTypes = {
 
 const TodoCenterContent = ({ idForA11y, text, editing, onChange }) => {
   return editing ? (
-    // eslint-disable-next-line
-    <Input autoFocus value={text} onChange={onChange} />
+    <TodoInput
+      autoFocus
+      aria-label="todo text"
+      value={text}
+      onChange={onChange}
+      id={idForA11y}
+    />
   ) : (
     <Text id={idForA11y}>{text}</Text>
   )
@@ -73,19 +82,19 @@ TodoCenterContent.propTypes = {
 }
 
 const TodoButtons = ({ editing, onEdit, onRemove, onSave, onCancel }) => (
-  <Buttons>
+  <ButtonsBox>
     {editing ? (
       <>
-        <Button onClick={onSave}>Save</Button>
-        <Button onClick={onCancel}>Cancel</Button>
+        <EmojiButton onClick={onSave} ariaLabel="save" emoji="💾" />
+        <EmojiButton onClick={onCancel} ariaLabel="cancel" emoji="❌" />
       </>
     ) : (
       <>
-        <Button onClick={onEdit}>Edit</Button>
-        <Button onClick={onRemove}>Remove</Button>
+        <EmojiButton onClick={onEdit} ariaLabel="edit" emoji="✏️" />
+        <EmojiButton onClick={onRemove} ariaLabel="remove" emoji="🗑" />
       </>
     )}
-  </Buttons>
+  </ButtonsBox>
 )
 
 TodoButtons.propTypes = {
@@ -95,45 +104,3 @@ TodoButtons.propTypes = {
   onSave: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired
 }
-
-const Checkbox = ({ onToggle, checked, labelledBy }) => {
-  const handleKeyDown = e => {
-    if (e.keyCode === 32) {
-      onToggle()
-    }
-  }
-
-  return (
-    <Box
-      role="checkbox"
-      tabIndex="0"
-      checked={checked}
-      aria-checked={checked}
-      aria-labelledby={labelledBy}
-      onClick={onToggle}
-      onKeyDown={handleKeyDown}
-    />
-  )
-}
-
-Checkbox.propTypes = {
-  onToggle: PropTypes.func.isRequired,
-  checked: PropTypes.bool.isRequired,
-  labelledBy: PropTypes.string.isRequired
-}
-
-const TodoBox = styled.li``
-const Input = styled.input``
-const Text = styled.p``
-const Buttons = styled.div``
-const Button = styled.button``
-const Box = styled.div`
-  position: relative;
-  border: 1px solid #000;
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-  ::after {
-    content: ${props => (props.checked ? '"✔"' : ' ')};
-  }
-`
