@@ -1,0 +1,1 @@
+export { CommonContentTemplate } from './templates'
