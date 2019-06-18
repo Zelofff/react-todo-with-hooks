@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useInput } from '@lib/use-input'
 
-import { EmojiButton } from '@ui'
-import { TodoBox, TodoInput, TodoText, Checkbox, ButtonsBox } from '../atoms'
+import { EmojiButton, Text } from '@ui'
+import { TodoBox, TodoInput, Checkbox, ButtonsBox } from '../atoms'
 
 export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
   const [editing, setEditing] = React.useState(false)
@@ -70,7 +70,9 @@ const TodoTextContent = ({ idForA11y, text, editing, onChange }) => {
       id={idForA11y}
     />
   ) : (
-    <TodoText id={idForA11y}>{text}</TodoText>
+    <Text margin="0 0 0 1rem" id={idForA11y}>
+      {text}
+    </Text>
   )
 }
 
