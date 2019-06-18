@@ -30,9 +30,12 @@ Checkbox.propTypes = {
 
 const Box = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #000;
-  width: 15px;
-  height: 15px;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
   ::after {
     content: ${props => (props.checked ? '"✔"' : ' ')};
