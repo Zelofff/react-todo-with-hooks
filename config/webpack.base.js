@@ -9,7 +9,7 @@ module.exports = mode => {
   return {
     entry: './src/index.js',
     output: {
-      filename: 'bundle.js',
+      filename: 'static/js/bundle.js',
       path: path.resolve(__dirname, '../dist')
     },
     module: {
@@ -63,7 +63,7 @@ module.exports = mode => {
         filename: './index.html'
       }),
       new MiniCssExtractPlugin({
-        filename: 'styles.css'
+        filename: 'static/css/styles.css'
       })
     ]
   }
