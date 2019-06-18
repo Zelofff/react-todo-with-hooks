@@ -6,5 +6,5 @@ const mode = 'production'
 
 module.exports = merge(base(mode), {
   mode,
-  plugins: [new CompressionPlugin()]
+  plugins: [new CompressionPlugin({ test: /\.js(\?.*)?$/i })]
 })
