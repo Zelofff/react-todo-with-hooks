@@ -50,7 +50,6 @@ module.exports = mode => {
     },
     resolve: {
       alias: {
-        'react-dom': '@hot-loader/react-dom',
         '@features': path.resolve(__dirname, '../src/features/'),
         '@ui': path.resolve(__dirname, '../src/ui/'),
         '@lib': path.resolve(__dirname, '../src/lib/')

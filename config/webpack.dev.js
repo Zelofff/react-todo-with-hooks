@@ -8,5 +8,10 @@ module.exports = merge(base(mode), {
   devtool: 'inline-source-map',
   devServer: {
     hot: true
+  },
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   }
 })
