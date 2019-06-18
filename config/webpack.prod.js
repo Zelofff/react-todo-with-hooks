@@ -2,7 +2,9 @@ const base = require('./webpack.base')
 const merge = require('webpack-merge')
 const CompressionPlugin = require('compression-webpack-plugin')
 
-module.exports = merge(base, {
-  mode: 'production',
+const mode = 'production'
+
+module.exports = merge(base(mode), {
+  mode,
   plugins: [new CompressionPlugin()]
 })
