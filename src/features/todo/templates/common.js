@@ -17,7 +17,8 @@ CommonTodosTemplate.propTypes = {
 const Center = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 5.5rem;
   max-width: 60vw;
   width: 100%;
 `
