@@ -11,5 +11,10 @@ export const globals = css`
       overflow: hidden;
       -webkit-font-smoothing: antialiased;
     }
+
+    #root {
+      height: 100vh;
+      overflow: hidden;
+    }
   }
 `

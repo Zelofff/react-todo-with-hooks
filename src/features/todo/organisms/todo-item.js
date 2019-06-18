@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useInput } from '@lib/use-input'
 
-import { Text, EmojiButton } from '@ui'
-import { TodoBox, TodoInput, Checkbox, ButtonsBox } from '../atoms'
+import { EmojiButton } from '@ui'
+import { TodoBox, TodoInput, TodoText, Checkbox, ButtonsBox } from '../atoms'
 
 export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
   const [editing, setEditing] = React.useState(false)
@@ -32,7 +32,7 @@ export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
           labelledBy={todo.id}
         />
       )}
-      <TodoCenterContent
+      <TodoTextContent
         idForA11y={todo.id}
         text={newText}
         editing={editing}
@@ -60,7 +60,7 @@ TodoItem.propTypes = {
   onRemove: PropTypes.func.isRequired
 }
 
-const TodoCenterContent = ({ idForA11y, text, editing, onChange }) => {
+const TodoTextContent = ({ idForA11y, text, editing, onChange }) => {
   return editing ? (
     <TodoInput
       autoFocus
@@ -70,11 +70,11 @@ const TodoCenterContent = ({ idForA11y, text, editing, onChange }) => {
       id={idForA11y}
     />
   ) : (
-    <Text id={idForA11y}>{text}</Text>
+    <TodoText id={idForA11y}>{text}</TodoText>
   )
 }
 
-TodoCenterContent.propTypes = {
+TodoTextContent.propTypes = {
   idForA11y: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   editing: PropTypes.bool.isRequired,
