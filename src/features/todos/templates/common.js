@@ -21,4 +21,9 @@ const Center = styled.div`
   margin-top: 5.5rem;
   max-width: 60vw;
   width: 100%;
+
+  @media (max-width: 768px) {
+    margin-top: 2.5rem;
+    max-width: 90vw;
+  }
 `
