@@ -2,7 +2,7 @@ import { TOGGLE_TODO, EDIT_TODO, ADD_TODO, REMOVE_TODO } from '../actions'
 
 const initialState = {}
 
-export const byId = (state = initialState, action) => {
+export const todosByIdReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
       return {

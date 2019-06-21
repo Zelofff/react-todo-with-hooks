@@ -6,7 +6,7 @@ import './global-styles'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from '@lib/theme-context'
 
-import { TodosPage } from '@features/todo'
+import { TodosPage } from '@features/todos'
 
 const store = configureStore()
 
