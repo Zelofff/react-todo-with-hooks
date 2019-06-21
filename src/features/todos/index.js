@@ -1,2 +1,2 @@
 export { TodosPage } from './pages'
-export { todos } from './reducers'
+export { reducer as todosReducer } from './symbiotes/todos'
