@@ -33,6 +33,7 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   border: 1px solid #000;
   width: 2rem;
   height: 2rem;
