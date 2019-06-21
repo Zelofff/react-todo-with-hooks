@@ -5,14 +5,10 @@ const initialState = []
 export const allIds = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      return {
-        allIds: [...state, action.id]
-      }
+      return [...state, action.id]
 
     case REMOVE_TODO:
-      return {
-        allIds: state.filter(id => id !== action.id)
-      }
+      return state.filter(id => id !== action.id)
 
     default:
       return state
