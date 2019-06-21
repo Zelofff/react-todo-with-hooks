@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-const test = (state = {}) => state
+import { todos } from '@features/todo'
 
 export const reducer = combineReducers({
-  test
+  todos
 })
