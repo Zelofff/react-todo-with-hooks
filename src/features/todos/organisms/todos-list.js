@@ -1,27 +1,29 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { actions } from '../symbiotes/todos'
 
 import { ItemsList } from '@ui'
 import { TodoItem } from './todo-item'
 
-const noop = () => {}
-
 export const TodosList = () => {
-  const items = [
-    { text: 'hello world', completed: true, id: '1' },
-    { text: 'hello', completed: false, id: '2' },
-    { text: 'hi', completed: false, id: '3' }
-  ]
+  const todos = useSelector(state => state.todos)
+
+  const dispatch = useDispatch()
+  const toggleTodo = id => dispatch(actions.toggle(id))
+  const remvoeTodo = id => dispatch(actions.remove(id))
+  const editTodo = (id, text) => dispatch(actions.edit(id, text))
 
   return (
     <ItemsList
-      items={items}
+      items={todos}
       render={item => (
         <TodoItem
           key={item.id}
           todo={item}
-          onToggle={() => noop(item.id)}
-          onSave={newText => noop(item.id, newText)}
-          onRemove={() => noop(item.id)}
+          onToggle={toggleTodo}
+          onRemove={remvoeTodo}
+          onEdit={editTodo}
         />
       )}
     />

@@ -5,17 +5,19 @@ import { useInput } from '@lib/use-input'
 import { EmojiButton } from '@ui'
 import { TodoBox, TodoInput, TodoText, Checkbox, ButtonsBox } from '../atoms'
 
-export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
+export const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
   const [editing, setEditing] = React.useState(false)
   const [newText, setNewText, reset] = useInput(todo.text)
 
-  const toggleEdit = () => {
-    setEditing(e => !e)
+  const onToggleTodo = () => onToggle(todo.id)
+  const onRemoveTodo = () => onRemove(todo.id)
+  const onEditTodo = () => {
+    onEdit(todo.id, newText)
+    toggleEdit()
   }
 
-  const handleSave = () => {
-    onSave(newText)
-    toggleEdit()
+  const toggleEdit = () => {
+    setEditing(e => !e)
   }
 
   const handleCancel = () => {
@@ -28,7 +30,7 @@ export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
       {!editing && (
         <Checkbox
           checked={todo.completed}
-          onToggle={onToggle}
+          onToggle={onToggleTodo}
           labelledBy={todo.id}
         />
       )}
@@ -41,8 +43,8 @@ export const TodoItem = ({ todo, onToggle, onSave, onRemove }) => {
       <TodoButtons
         editing={editing}
         onEdit={toggleEdit}
-        onRemove={onRemove}
-        onSave={handleSave}
+        onRemove={onRemoveTodo}
+        onSave={onEditTodo}
         onCancel={handleCancel}
       />
     </TodoBox>
@@ -56,7 +58,7 @@ TodoItem.propTypes = {
     id: PropTypes.string.isRequired
   }),
   onToggle: PropTypes.func.isRequired,
-  onSave: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired
 }
 

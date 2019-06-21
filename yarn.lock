@@ -5409,7 +5409,7 @@ nan@^2.12.1:
   resolved "https://registry.npmjs.org/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
 
-nanoid@^2.0.3:
+nanoid@^2.0.1, nanoid@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-2.0.3.tgz#dde999e173bc9d7bd2ee2746b89909ade98e075e"
   integrity sha512-NbaoqdhIYmY6FXDRB4eYtDVC9Z9eCbn8TyaiC16LNKtpPv/aqa0tOPD8y6gNE4yUNnaZ7LLhYtXOev/6+cBtfw==
@@ -6510,6 +6510,14 @@ redent@^2.0.0:
     indent-string "^3.0.0"
     strip-indent "^2.0.0"
 
+redux-symbiote@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/redux-symbiote/-/redux-symbiote-3.1.0.tgz#21e3528c3b524342b4f42766644b393547aad79b"
+  integrity sha512-16THhoM5bgRW00rwqJt5TgaElaTJcjcIvb+EQ73U2VHSxjUJmLZrUK4cbR2nSr8RtCLErq9e52SOaGcu2itN/w==
+  dependencies:
+    nanoid "^2.0.1"
+    symbiote-symbol "^3.0.0"
+
 redux@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
@@ -7409,6 +7417,11 @@ supports-color@^6.1.0:
   integrity sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==
   dependencies:
     has-flag "^3.0.0"
+
+symbiote-symbol@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/symbiote-symbol/-/symbiote-symbol-3.0.0.tgz#dcc63ec453581c12cfc0a4043b2307795e5adfad"
+  integrity sha512-kuThtzbNBZPJOd/rg4a0EXtnL4rB6Swxe6cSImMIcRiYG1vZajTeSs2RRdpE6ipyubHzCLgQ8/Un/+A/SKowAA==
 
 symbol-observable@^1.1.0, symbol-observable@^1.2.0:
   version "1.2.0"
