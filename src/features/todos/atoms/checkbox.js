@@ -4,7 +4,7 @@ import { styled } from 'linaria/react'
 
 export const Checkbox = ({ onToggle, checked, labelledBy }) => {
   const handleKeyDown = e => {
-    if (e.keyCode === 32) {
+    if (e.keyCode === 32 || e.keyCode === 13) {
       onToggle()
     }
   }
