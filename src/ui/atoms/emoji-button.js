@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
+import { Emoji } from './emoji'
+
 export const EmojiButton = ({ onClick, ariaLabel, emoji, ...rest }) => (
   <Button onClick={onClick} {...rest}>
-    <span role="img" aria-label={ariaLabel}>
-      {emoji}
-    </span>
+    <Emoji ariaLabel={ariaLabel} emoji={emoji} />
   </Button>
 )
 
@@ -17,9 +17,7 @@ EmojiButton.propTypes = {
 }
 
 const Button = styled.button`
-  font-size: 2rem;
-  line-height: 2rem;
-  padding: 5px;
+  padding: 0.3rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
