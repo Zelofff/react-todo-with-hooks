@@ -1,12 +1,13 @@
 import React from 'react'
 
 import { CommonTodosTemplate } from '../templates'
-import { TodosList } from '../organisms'
+import { TodosList, AddTodoForm } from '../organisms'
 
 export const TodosPage = () => {
   return (
     <CommonTodosTemplate>
       <TodosList />
+      <AddTodoForm />
     </CommonTodosTemplate>
   )
 }

@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
-export const EmojiButton = ({ onClick, ariaLabel, emoji }) => (
-  <Button onClick={onClick}>
+export const EmojiButton = ({ onClick, ariaLabel, emoji, ...rest }) => (
+  <Button onClick={onClick} {...rest}>
     <span role="img" aria-label={ariaLabel}>
       {emoji}
     </span>
@@ -11,7 +11,7 @@ export const EmojiButton = ({ onClick, ariaLabel, emoji }) => (
 )
 
 EmojiButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   ariaLabel: PropTypes.string.isRequired,
   emoji: PropTypes.string.isRequired
 }

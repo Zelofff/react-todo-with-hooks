@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useInput } from '@lib/use-input'
 
-import { EmojiButton } from '@ui'
-import { TodoBox, TodoInput, TodoText, Checkbox, ButtonsBox } from '../atoms'
+import { EmojiButton, Input } from '@ui'
+import { TodoBox, TodoText, Checkbox, ButtonsBox } from '../atoms'
 
 export const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
   const [editing, setEditing] = React.useState(false)
@@ -64,12 +64,13 @@ TodoItem.propTypes = {
 
 const TodoTextContent = ({ idForA11y, text, editing, onChange }) => {
   return editing ? (
-    <TodoInput
+    <Input
       autoFocus
-      aria-label="todo text"
       value={text}
-      onChange={onChange}
       id={idForA11y}
+      onChange={onChange}
+      aria-label="todo text"
+      placeholder="Start typing here to edit todo"
     />
   ) : (
     <TodoText margin="0 0 0 1rem" id={idForA11y}>
