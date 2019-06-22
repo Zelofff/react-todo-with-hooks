@@ -34,10 +34,15 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  border: 1px solid #000;
+  background-color: ${props => (props.checked ? '#62d8b3' : '#fff')};
+  box-shadow: 0px 6px 20px -5px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 50%;
   width: 2rem;
   height: 2rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+
   ::after {
     content: ${props => (props.checked ? '"✔"' : ' ')};
   }
