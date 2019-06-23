@@ -14,8 +14,10 @@ export const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
   const onToggleTodo = () => onToggle(todo.id)
   const onRemoveTodo = () => onRemove(todo.id)
   const onEditTodo = () => {
-    onEdit(todo.id, newText)
-    toggleEdit()
+    if (newText.trim().length !== 0) {
+      onEdit(todo.id, newText)
+      toggleEdit()
+    }
   }
 
   const toggleEdit = () => {

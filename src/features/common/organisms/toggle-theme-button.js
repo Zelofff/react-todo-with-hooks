@@ -1,5 +1,6 @@
 import React from 'react'
 import { useThemeState, useThemeToggle } from '@lib/theme-context'
+import { useKeyDown } from '@lib/use-keydown'
 import { styled } from 'linaria/react'
 
 import { light } from '@ui/themes'
@@ -9,20 +10,14 @@ import { Emoji } from '@ui'
 export const ToggleThemeButton = () => {
   const ref = React.createRef()
   const theme = useThemeState()
-  const toggle = useThemeToggle()
   const isDark = theme !== light
+
+  const toggle = useThemeToggle()
+  const handleKeyDown = useKeyDown(toggle, 32, 13)
 
   const handleToggle = () => {
     ref.current.focus()
     toggle()
-  }
-
-  // TODO: Maybe useKeyDown(callback, keycode, keycode, ...)
-
-  const handleKeyDown = e => {
-    if (e.keyCode === 32 || e.keyCode === 13) {
-      toggle()
-    }
   }
 
   return (

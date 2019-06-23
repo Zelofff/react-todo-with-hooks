@@ -1,13 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useKeyDown } from '@lib/use-keydown'
 import { styled } from 'linaria/react'
 
 export const Checkbox = ({ onToggle, checked, labelledBy }) => {
-  const handleKeyDown = e => {
-    if (e.keyCode === 32 || e.keyCode === 13) {
-      onToggle()
-    }
-  }
+  const handleKeyDown = useKeyDown(onToggle, 32, 13)
 
   return (
     <Box
