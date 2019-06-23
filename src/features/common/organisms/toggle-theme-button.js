@@ -22,8 +22,8 @@ export const ToggleThemeButton = () => {
 
   return (
     <Switcher onClick={handleToggle} onKeyDown={handleKeyDown}>
-      <Emoji ariaLabel="Dark theme" emoji="🌙" size="1.5rem" />
-      <Emoji ariaLabel="Light theme" emoji="🌞" size="1.5rem" />
+      <Emoji ariaLabel="Dark theme" emoji="🌙" size="25px" />
+      <Emoji ariaLabel="Light theme" emoji="🌞" size="25px" />
       <Circle
         aria-label="Switch between light and dark theme"
         role="checkbox"

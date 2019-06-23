@@ -21,4 +21,6 @@ Emoji.defaultProps = {
 const EmojiSpan = styled.span`
   font-size: ${props => props.size};
   line-height: ${props => props.size};
+  user-select: none;
+  color: #fff;
 `
