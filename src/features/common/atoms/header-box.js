@@ -7,6 +7,8 @@ export const HeaderBox = styled.div`
   align-items: center;
   padding: 15px 30px;
   background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: 0px 5px 20px -5px var(--color-shadow);
   box-sizing: border-box;
-  box-shadow: 0 10px 20px rgba(36, 37, 38, 0.08);
+  transition: background-color 0.2s ease-out;
 `

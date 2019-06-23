@@ -4,6 +4,15 @@ It's a React todo app based on feature slices approach with atomic design, react
 
 Feature slices and atomic design were choosed only because I wanted to try these approaches. It's so overcomplicated in such a simple app, but it's very good for a huge long living projects.
 
+## My thoughts about Feature slices
+
+It's very cool approach, which is suitable for both small and large applications. You can combine it with any state manager and design system.
+
+## My thoughts about Atomic design
+
+If project is designed well before development, it will be easy to implement atomic design and maintain project in future.
+But in the case of this project it was difficult because I didn't have a design before development, and because of that I had to think a lot about what component is an atom, what molecule, etc.
+
 ## Aliases
 
 - @features -> `./src/features`

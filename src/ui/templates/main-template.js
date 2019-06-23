@@ -24,8 +24,8 @@ MainTemplate.propTypes = {
 
 const MainContainer = styled.div`
   display: grid;
-  max-height: 100vh;
-  max-width: 100vw;
+  max-height: 100%;
+  max-width: 100%;
   height: 100%;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
@@ -35,9 +35,10 @@ const MainContainer = styled.div`
 `
 
 const Header = styled.header`
-  grid-area: 'header';
+  grid-area: header;
+  z-index: 1;
 `
 
 const Footer = styled.footer`
-  grid-area: 'footer';
+  grid-area: footer;
 `

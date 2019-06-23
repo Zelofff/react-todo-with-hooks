@@ -1,7 +1,11 @@
 import { createSymbiote } from 'redux-symbiote'
 import nanoid from 'nanoid'
 
-const initialState = []
+const initialState = [
+  { id: '1', text: 'hello world', completed: true },
+  { id: '2', text: 'hello ', completed: true },
+  { id: '3', text: ' world', completed: false }
+]
 
 const symbiotes = {
   add: (state, text) => [...state, { id: nanoid(10), completed: false, text }],

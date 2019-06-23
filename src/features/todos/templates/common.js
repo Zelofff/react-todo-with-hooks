@@ -6,7 +6,9 @@ import { CommonContentTemplate } from '@features/common'
 
 export const CommonTodosTemplate = ({ children }) => (
   <CommonContentTemplate>
-    <Center>{children}</Center>
+    <Center>
+      <Container>{children}</Container>
+    </Center>
   </CommonContentTemplate>
 )
 
@@ -18,12 +20,17 @@ const Center = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 5.5rem;
   max-width: 60vw;
   width: 100%;
 
   @media (max-width: 768px) {
-    margin-top: 2.5rem;
     max-width: 90vw;
+  }
+`
+
+const Container = styled.div`
+  margin: 5.5rem 0;
+  @media (max-width: 768px) {
+    margin: 2.5rem 0;
   }
 `

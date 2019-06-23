@@ -1,4 +1,3 @@
-export { TodoInput } from './todo-input'
 export { TodoText } from './todo-text'
 export { Checkbox } from './checkbox'
 export { TodoBox } from './todo-box'

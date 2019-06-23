@@ -1,13 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useKeyDown } from '@lib/use-keydown'
 import { styled } from 'linaria/react'
 
 export const Checkbox = ({ onToggle, checked, labelledBy }) => {
-  const handleKeyDown = e => {
-    if (e.keyCode === 32) {
-      onToggle()
-    }
-  }
+  const handleKeyDown = useKeyDown(onToggle, 32, 13)
 
   return (
     <Box
@@ -34,10 +31,16 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  border: 1px solid #000;
+  background-color: ${props =>
+    props.checked ? 'var(--color-secondary)' : 'var(--color-surface)'};
+  box-shadow: 0px 6px 20px -5px var(--color-shadow);
+  color: var(--color-on-secondary);
+  border-radius: 50%;
   width: 2rem;
   height: 2rem;
   cursor: pointer;
+  transition: background-color 0.2s ease-out;
+
   ::after {
     content: ${props => (props.checked ? '"✔"' : ' ')};
   }

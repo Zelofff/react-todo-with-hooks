@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useInput } from '@lib/use-input'
 
-import { EmojiButton } from '@ui'
-import { TodoBox, TodoInput, TodoText, Checkbox, ButtonsBox } from '../atoms'
+import { TodoBox, Checkbox } from '../atoms'
+import { TodoTextContent, TodoButtons } from '../molecules'
 
 export const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
   const [editing, setEditing] = React.useState(false)
@@ -12,8 +12,10 @@ export const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
   const onToggleTodo = () => onToggle(todo.id)
   const onRemoveTodo = () => onRemove(todo.id)
   const onEditTodo = () => {
-    onEdit(todo.id, newText)
-    toggleEdit()
+    if (newText.trim().length !== 0) {
+      onEdit(todo.id, newText)
+      toggleEdit()
+    }
   }
 
   const toggleEdit = () => {
@@ -60,51 +62,4 @@ TodoItem.propTypes = {
   onToggle: PropTypes.func.isRequired,
   onEdit: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired
-}
-
-const TodoTextContent = ({ idForA11y, text, editing, onChange }) => {
-  return editing ? (
-    <TodoInput
-      autoFocus
-      aria-label="todo text"
-      value={text}
-      onChange={onChange}
-      id={idForA11y}
-    />
-  ) : (
-    <TodoText margin="0 0 0 1rem" id={idForA11y}>
-      {text}
-    </TodoText>
-  )
-}
-
-TodoTextContent.propTypes = {
-  idForA11y: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  editing: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired
-}
-
-const TodoButtons = ({ editing, onEdit, onRemove, onSave, onCancel }) => (
-  <ButtonsBox>
-    {editing ? (
-      <>
-        <EmojiButton onClick={onSave} ariaLabel="save" emoji="💾" />
-        <EmojiButton onClick={onCancel} ariaLabel="cancel" emoji="❌" />
-      </>
-    ) : (
-      <>
-        <EmojiButton onClick={onEdit} ariaLabel="edit" emoji="✏️" />
-        <EmojiButton onClick={onRemove} ariaLabel="remove" emoji="🗑" />
-      </>
-    )}
-  </ButtonsBox>
-)
-
-TodoButtons.propTypes = {
-  editing: PropTypes.bool.isRequired,
-  onEdit: PropTypes.func.isRequired,
-  onRemove: PropTypes.func.isRequired,
-  onSave: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired
 }
