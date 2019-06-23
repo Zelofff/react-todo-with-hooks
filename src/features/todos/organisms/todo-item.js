@@ -70,7 +70,7 @@ const TodoTextContent = ({ idForA11y, text, editing, onChange }) => {
       id={idForA11y}
       onChange={onChange}
       aria-label="todo text"
-      placeholder="Start typing here to edit todo"
+      placeholder="Type here to edit todo text"
     />
   ) : (
     <TodoText margin="0 0 0 1rem" id={idForA11y}>
@@ -90,7 +90,7 @@ const TodoButtons = ({ editing, onEdit, onRemove, onSave, onCancel }) => (
   <ButtonsBox>
     {editing ? (
       <>
-        <EmojiButton onClick={onSave} ariaLabel="save" emoji="💾" />
+        <EmojiButton onClick={onSave} ariaLabel="save" emoji="👌🏻" />
         <EmojiButton onClick={onCancel} ariaLabel="cancel" emoji="❌" />
       </>
     ) : (
