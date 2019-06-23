@@ -1,7 +1,5 @@
 import { styled } from 'linaria/react'
 
-// TODO: Atom wrapper
-
 export const TodoBox = styled.li`
   display: flex;
   flex-flow: row nowrap;

@@ -36,8 +36,6 @@ export const ToggleThemeButton = () => {
   )
 }
 
-// TODO: Maybe extract
-
 const Switcher = styled.div`
   position: relative;
   display: flex;
