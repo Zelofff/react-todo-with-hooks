@@ -16,5 +16,11 @@ export const globals = css`
       height: 100vh;
       overflow: hidden;
     }
+
+    @media (max-width: 768px) {
+      html {
+        font-size: 12px;
+      }
+    }
   }
 `

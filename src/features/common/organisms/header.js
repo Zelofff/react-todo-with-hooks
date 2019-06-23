@@ -6,7 +6,7 @@ import { ToggleThemeButton } from './toggle-theme-button'
 
 export const Header = () => (
   <HeaderBox>
-    <H1>React Todo App with Hooks</H1>
+    <H1>React Todo App</H1>
     <ToggleThemeButton />
   </HeaderBox>
 )
