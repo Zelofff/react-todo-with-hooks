@@ -1,9 +1,8 @@
 import React from 'react'
-import { useThemeState, useThemeToggle } from '@lib/theme-context'
-import { light } from '@ui/themes'
 
-import { EmojiButton, H1 } from '@ui'
+import { H1 } from '@ui'
 import { HeaderBox } from '../atoms'
+import { ToggleThemeButton } from './toggle-theme-button'
 
 export const Header = () => (
   <HeaderBox>
@@ -11,18 +10,3 @@ export const Header = () => (
     <ToggleThemeButton />
   </HeaderBox>
 )
-
-const ToggleThemeButton = () => {
-  const theme = useThemeState()
-  const toggle = useThemeToggle()
-
-  const isDark = theme !== light
-
-  return (
-    <EmojiButton
-      onClick={toggle}
-      ariaLabel="toggle theme"
-      emoji={isDark ? '🌙' : '🌞'}
-    />
-  )
-}

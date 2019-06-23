@@ -24,4 +24,6 @@ const CommonContent = styled.main`
   display: flex;
   justify-content: center;
   overflow-y: auto;
+  background-color: var(--color-background);
+  transition: background-color 0.3s ease;
 `

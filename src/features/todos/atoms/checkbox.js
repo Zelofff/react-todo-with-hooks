@@ -34,9 +34,10 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  background-color: ${props => (props.checked ? '#62d8b3' : '#fff')};
-  box-shadow: 0px 6px 20px -5px rgba(0, 0, 0, 0.8);
-  color: #fff;
+  background-color: ${props =>
+    props.checked ? 'var(--color-secondary)' : 'var(--color-surface)'};
+  box-shadow: 0px 6px 20px -5px var(--color-shadow);
+  color: var(--color-on-secondary);
   border-radius: 50%;
   width: 2rem;
   height: 2rem;

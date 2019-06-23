@@ -36,6 +36,7 @@ const MainContainer = styled.div`
 
 const Header = styled.header`
   grid-area: 'header';
+  z-index: 1;
 `
 
 const Footer = styled.footer`

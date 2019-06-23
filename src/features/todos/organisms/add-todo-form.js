@@ -43,14 +43,10 @@ const Form = styled.form`
   margin: 0 auto;
   padding: 1rem 1.4rem;
   position: relative;
-  background-color: #fff;
+  background-color: var(--color-surface);
   border-radius: 5rem;
-  box-shadow: 0px 6px 20px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 6px 20px -5px var(--color-shadow);
   box-sizing: border-box;
-
-  ${Input} {
-    margin-right: 1rem;
-  }
 
   @media (max-width: 768px) {
     width: 100%;

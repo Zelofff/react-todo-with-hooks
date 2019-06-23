@@ -18,12 +18,13 @@ const Center = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 5.5rem;
+  margin: 5.5rem 0;
   max-width: 60vw;
   width: 100%;
+  height: fit-content;
 
   @media (max-width: 768px) {
-    margin-top: 2.5rem;
+    margin: 2.5rem 0;
     max-width: 90vw;
   }
 `
