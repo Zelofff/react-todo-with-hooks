@@ -1,5 +1,7 @@
 import { styled } from 'linaria/react'
 
+// TODO: Atom wrapper
+
 export const HeaderBox = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -10,5 +12,5 @@ export const HeaderBox = styled.div`
   color: var(--color-on-primary);
   box-shadow: 0px 5px 20px -5px var(--color-shadow);
   box-sizing: border-box;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease-out;
 `

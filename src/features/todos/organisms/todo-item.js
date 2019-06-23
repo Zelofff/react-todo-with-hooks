@@ -5,6 +5,8 @@ import { useInput } from '@lib/use-input'
 import { EmojiButton, Input } from '@ui'
 import { TodoBox, TodoText, Checkbox, ButtonsBox } from '../atoms'
 
+// TODO: Maybe extract
+
 export const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
   const [editing, setEditing] = React.useState(false)
   const [newText, setNewText, reset] = useInput(todo.text)

@@ -47,6 +47,7 @@ const Form = styled.form`
   border-radius: 5rem;
   box-shadow: 0px 6px 20px -5px var(--color-shadow);
   box-sizing: border-box;
+  transition: background-color 0.2s ease-out;
 
   @media (max-width: 768px) {
     width: 100%;

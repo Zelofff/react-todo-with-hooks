@@ -25,5 +25,5 @@ const CommonContent = styled.main`
   justify-content: center;
   overflow-y: auto;
   background-color: var(--color-background);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease-out;
 `

@@ -17,6 +17,8 @@ export const ToggleThemeButton = () => {
     toggle()
   }
 
+  // TODO: Maybe useKeyDown(callback, keycode, keycode, ...)
+
   const handleKeyDown = e => {
     if (e.keyCode === 32 || e.keyCode === 13) {
       toggle()
@@ -38,6 +40,8 @@ export const ToggleThemeButton = () => {
     </Switcher>
   )
 }
+
+// TODO: Maybe extract
 
 const Switcher = styled.div`
   position: relative;
@@ -61,5 +65,5 @@ const Circle = styled.div`
   width: 30px;
   height: 30px;
   transform: ${props => (props.isDark ? 'translateX(32px)' : 'translateX(0)')};
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 `

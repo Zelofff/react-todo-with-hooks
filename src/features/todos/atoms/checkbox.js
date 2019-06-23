@@ -42,7 +42,7 @@ const Box = styled.div`
   width: 2rem;
   height: 2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease-out;
 
   ::after {
     content: ${props => (props.checked ? '"✔"' : ' ')};

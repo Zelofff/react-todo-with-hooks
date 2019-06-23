@@ -10,4 +10,5 @@ export const Input = styled.input`
   padding: 0.5rem;
   width: 100%;
   box-sizing: border-box;
+  transition: background-color 0.2s ease-out;
 `
