@@ -19,7 +19,7 @@ export const globals = css`
 
     @media (max-width: 768px) {
       html {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
   }
