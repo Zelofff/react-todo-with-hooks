@@ -5,7 +5,7 @@ const getFilter = state => state.todosFilter
 const createFilterPredicate = filter => todo =>
   filter === filterTypes.COMPLETED ? todo.completed : !todo.completed
 
-export const getFilteredTodos = state => {
+export const filteredTodosSelector = state => {
   const filter = getFilter(state)
   const todos = getTodos(state)
 

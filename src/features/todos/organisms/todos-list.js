@@ -1,13 +1,14 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import { filteredTodosSelector } from '../selectors'
 import { actions } from '../symbiotes/todos'
 
 import { ItemsList } from '@ui'
 import { TodoItem } from './todo-item'
 
 export const TodosList = () => {
-  const todos = useSelector(state => state.todos)
+  const todos = useSelector(state => filteredTodosSelector(state))
 
   const dispatch = useDispatch()
   const toggleTodo = id => dispatch(actions.toggle(id))
