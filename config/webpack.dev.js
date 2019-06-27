@@ -7,7 +7,8 @@ module.exports = merge(base(mode), {
   mode,
   devtool: 'eval-source-map',
   devServer: {
-    hot: true
+    hot: true,
+    port: 8000
   },
   resolve: {
     alias: {
