@@ -60,7 +60,7 @@ module.exports = mode => {
       new CleanWebpackPlugin(),
       new HtmlWebPackPlugin({
         template: './public/index.html',
-        filename: './index.html'
+        title: 'React todo app'
       }),
       new MiniCssExtractPlugin({
         filename: 'static/css/styles.css'
