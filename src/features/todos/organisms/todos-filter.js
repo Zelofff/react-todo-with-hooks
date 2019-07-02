@@ -1,11 +1,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { styled } from 'linaria/react'
 
 import { actions, filterTypes } from '../symbiotes/filter'
 
-// TODO: ADD STYLING
-// TODO: EXTRACT RADIO_BUTTON(maybe with label) IN ANOTHER MOLECULE/ATOM
-// TODO: VISIBILITY HIDDEN CHECKBOX
+import { RadioButton } from '../molecules'
 
 export const TodosFilter = () => {
   const filter = useSelector(state => state.todosFilter)
@@ -14,34 +13,42 @@ export const TodosFilter = () => {
   const changeFilter = e => dispatch(actions.change(e.target.value))
 
   return (
-    <form>
-      <fieldset>
-        <legend>Filter todos</legend>
-        <input
-          id="all"
-          checked={filter === filterTypes.ALL}
-          type="radio"
-          value={filterTypes.ALL}
-          onChange={changeFilter}
-        />
-        <label htmlFor="all">all</label>
-        <input
-          id="completed"
-          checked={filter === filterTypes.COMPLETED}
-          type="radio"
-          value={filterTypes.COMPLETED}
-          onChange={changeFilter}
-        />
-        <label htmlFor="completed">completed</label>
-        <input
-          id="not_completed"
-          checked={filter === filterTypes.NOT_COMPLTED}
-          type="radio"
-          value={filterTypes.NOT_COMPLTED}
-          onChange={changeFilter}
-        />
-        <label htmlFor="not_completed">not completed</label>
-      </fieldset>
-    </form>
+    <Container>
+      <RadioButton
+        id="all"
+        checked={filter === filterTypes.ALL}
+        type="radio"
+        value={filterTypes.ALL}
+        onChange={changeFilter}
+      >
+        all
+      </RadioButton>
+      <RadioButton
+        id="done"
+        checked={filter === filterTypes.COMPLETED}
+        type="radio"
+        value={filterTypes.COMPLETED}
+        onChange={changeFilter}
+      >
+        done
+      </RadioButton>
+      <RadioButton
+        id="active"
+        checked={filter === filterTypes.NOT_COMPLTED}
+        type="radio"
+        value={filterTypes.NOT_COMPLTED}
+        onChange={changeFilter}
+      >
+        active
+      </RadioButton>
+    </Container>
   )
 }
+
+const Container = styled.form`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+`

@@ -59,4 +59,9 @@ const Circle = styled.div`
   height: 30px;
   transform: ${props => (props.isDark ? 'translateX(32px)' : 'translateX(0)')};
   transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+
+  :focus {
+    outline: none;
+    box-shadow: 0px 0px 2px 3px green;
+  }
 `

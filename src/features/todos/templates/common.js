@@ -6,9 +6,9 @@ import { CommonContentTemplate } from '@features/common'
 
 export const CommonTodosTemplate = ({ children }) => (
   <CommonContentTemplate>
-    <Center>
+    <Narrow>
       <Container>{children}</Container>
-    </Center>
+    </Narrow>
   </CommonContentTemplate>
 )
 
@@ -16,7 +16,7 @@ CommonTodosTemplate.propTypes = {
   children: PropTypes.node.isRequired
 }
 
-const Center = styled.div`
+const Narrow = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
