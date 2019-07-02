@@ -1,5 +1,7 @@
 # React todo app
 
+https://dist.zeloff.now.sh/
+
 It's a React todo app based on feature slices approach with atomic design, react hooks and linaria for styling.
 
 Feature slices and atomic design were choosed only because I wanted to try these approaches. It's so overcomplicated in such a simple app, but it's very good for a huge long living projects.
