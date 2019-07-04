@@ -1,8 +1,7 @@
 {
-  "name": "react-crutch-boilerplate",
+  "name": "react-todo-with-hooks",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Zelofff/react-crutch-boilerplate.git",
   "author": "zeloff <zelofflab@yandex.ru>",
   "license": "MIT",
   "scripts": {
