@@ -4,6 +4,6 @@ export const ButtonsBox = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  flex: 6.5rem 0 0;
+  flex: 0 0 6.5rem;
   margin-left: auto;
 `

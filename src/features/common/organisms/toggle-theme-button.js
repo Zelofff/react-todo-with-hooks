@@ -45,7 +45,7 @@ const Switcher = styled.div`
   background-color: #000;
   border-radius: 5rem;
   height: 32px;
-  flex: 64px 0 0;
+  flex: 0 0 64px;
   cursor: pointer;
 `
 
