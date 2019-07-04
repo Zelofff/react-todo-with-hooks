@@ -11,4 +11,5 @@ export const HeaderBox = styled.div`
   box-shadow: 0px 5px 20px -5px var(--color-shadow);
   box-sizing: border-box;
   transition: background-color 0.2s ease-out;
+  white-space: nowrap;
 `

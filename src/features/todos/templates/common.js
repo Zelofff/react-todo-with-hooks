@@ -22,6 +22,7 @@ const Narrow = styled.div`
   justify-content: flex-start;
   max-width: 60vw;
   width: 100%;
+  height: fit-content;
 
   @media (max-width: 768px) {
     max-width: 90vw;
