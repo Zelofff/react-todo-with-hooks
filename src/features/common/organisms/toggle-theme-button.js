@@ -62,6 +62,6 @@ const Circle = styled.div`
 
   :focus {
     outline: none;
-    box-shadow: 0px 0px 2px 3px green;
+    box-shadow: 0px 0px 2px 3px #4d90fe;
   }
 `
