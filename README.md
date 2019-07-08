@@ -1,6 +1,6 @@
 # React todo app
 
-https://dist.zeloff.now.sh/
+https://todo-app.zeloff.now.sh/
 
 It's a React todo app based on feature slices approach with atomic design, react hooks and linaria for styling.
 
