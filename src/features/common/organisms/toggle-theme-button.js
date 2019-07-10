@@ -45,7 +45,7 @@ const Switcher = styled.div`
   background-color: #000;
   border-radius: 5rem;
   height: 32px;
-  flex: 64px 0 0;
+  flex: 0 0 64px;
   cursor: pointer;
 `
 
@@ -62,6 +62,6 @@ const Circle = styled.div`
 
   :focus {
     outline: none;
-    box-shadow: 0px 0px 2px 3px green;
+    box-shadow: 0px 0px 2px 3px #4d90fe;
   }
 `

@@ -60,6 +60,6 @@ const Input = styled.input`
   margin: -1px;
 
   &:focus + ${Label} {
-    box-shadow: 0px 0px 2px 3px green;
+    box-shadow: 0px 0px 2px 3px #4d90fe;
   }
 `
