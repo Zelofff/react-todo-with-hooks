@@ -47,6 +47,7 @@
     "jest": "^24.8.0",
     "lint-staged": "^9.2.1",
     "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^1.18.2",
     "react-axe": "^3.2.0",
     "webpack": "^4.39.2",
