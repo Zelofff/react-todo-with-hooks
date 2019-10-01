@@ -1,13 +1,16 @@
 import React, { createContext } from 'react'
 import PropTypes from 'prop-types'
 
+import { isPreferedThemeDark } from './is-prefered-dark'
 import { light, dark } from '@ui/themes'
 
 const ThemeStateContext = createContext()
 const ThemeUpdaterContext = createContext()
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = React.useState(light)
+  const initialTheme = isPreferedThemeDark() ? dark : light
+
+  const [theme, setTheme] = React.useState(initialTheme)
 
   return (
     <ThemeStateContext.Provider value={theme}>
