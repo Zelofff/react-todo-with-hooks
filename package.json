@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --open --config ./config/webpack.dev.js",
     "build": "webpack --config ./config/webpack.prod.js",
     "analyze": "webpack --config ./config/webpack.analyze.js",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:lefthook": "jest"
   },
   "jest": {
     "moduleNameMapper": {

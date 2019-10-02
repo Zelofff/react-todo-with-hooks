@@ -7,4 +7,4 @@ pre-commit:
 pre-push:
   commands:
     tests:
-      run: yarn test
+      run: yarn test:lefthook
