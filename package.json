@@ -10,6 +10,13 @@
     "analyze": "webpack --config ./config/webpack.analyze.js",
     "test": "jest --watch"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^@features(.*)$": "<rootDir>/src/features$1",
+      "^@ui(.*)$": "<rootDir>/src/ui$1",
+      "^@lib(.*)$": "<rootDir>/src/lib$1"
+    }
+  },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@hot-loader/react-dom": "^16.9.0-4.12.11",
