@@ -3,3 +3,8 @@ pre-commit:
     frontend-linter:
       glob: '*.{js,jsx}'
       run: eslint {staged_files}
+
+pre-push:
+  commands:
+    tests:
+      run: yarn test
